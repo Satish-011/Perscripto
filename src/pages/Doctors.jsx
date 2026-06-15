@@ -1,4 +1,4 @@
-import AllDoctors from "../components/AppointmentPageComponents/AllDoctors";
+import AllDoctors from "../components/AllDoctors";
 const Doctors = () => {
   return (
     <div>

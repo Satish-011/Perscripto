@@ -1,4 +1,4 @@
-import { assets } from "../../assets/assets";
+import { assets } from "../assets/assets";
 const Header = () => {
   return (
     <div className="flex items-center justify-between bg-blue-500 px-12 py-10 rounded-lg">

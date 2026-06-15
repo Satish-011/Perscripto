@@ -1,6 +1,6 @@
 import React from "react";
-import { assets } from "../../assets/assets";
-import Footer from "../Footer.jsx";
+import { assets } from "../assets/assets";
+import Footer from "./Footer.jsx";
 
 const Contact = () => {
   return (

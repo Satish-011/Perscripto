@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import About from "./pages/About";
@@ -8,9 +9,21 @@ import Doctor from "./pages/Doctors";
 import Profile from "./pages/MyProfile";
 import Appointment from "./pages/Appointments";
 import MyAppointments from "./pages/MyAppointments";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => {
   return (
     <div className="mx-4 sm:mx-[10%]">
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

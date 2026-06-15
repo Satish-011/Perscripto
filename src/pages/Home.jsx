@@ -1,7 +1,7 @@
-import Header from "../components/HomepageComponents/Header";
-import Speciality from "../components/HomepageComponents/Speciality";
-import TopDoctors from "../components/HomepageComponents/TopDoctors";
-import AppointmentBanner from "../components/HomepageComponents/AppointmentBanner";
+import Header from "../components/Header";
+import Speciality from "../components/Speciality";
+import TopDoctors from "../components/TopDoctors";
+import AppointmentBanner from "../components/AppointmentBanner";
 import Footer from "../components/Footer";
 const Home = () => {
   return (

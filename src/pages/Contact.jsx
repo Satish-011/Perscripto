@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "../components/AppointmentPageComponents/Contact.jsx";
+import Contact from "../components/Contact.jsx";
 const ContactPage = () => {
   return (
     <div>
