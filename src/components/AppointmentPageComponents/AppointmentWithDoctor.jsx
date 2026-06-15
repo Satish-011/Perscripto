@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppContext } from "../../context/AppContext";
 
 const AppointmentWithDoctor = () => {
   const { doctorId } = useParams();
   const { doctors } = useContext(AppContext);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const filteredDoctor = doctors.find((doctor) => doctor._id === doctorId);
 
@@ -79,6 +80,40 @@ const AppointmentWithDoctor = () => {
               ${filteredDoctor.fees}
             </span>
           </p>
+        </div>
+      </div>
+      <div>
+        <h1>Booking Slots</h1>
+        <div className="flex gap-4 flex-wrap">
+          {Array.from({ length: 7 }, (_, i) => {
+            const date = new Date(Date.now() + i * 24 * 60 * 60 * 1000);
+            const isActive = activeIndex === i;
+
+            return (
+              <button
+                onClick={() => setActiveIndex(i)}
+                key={i}
+                className={`w-20 h-32 rounded-[40px] flex flex-col items-center justify-center border border-gray-300 ${
+                  isActive ? "bg-blue-500 text-white" : "bg-white"
+                }`}
+              >
+                <span className="text-lg font-medium">
+                  {date
+                    .toLocaleDateString("en-US", { weekday: "short" })
+                    .toUpperCase()}
+                </span>
+                <span className="text-2xl font-bold mt-2">
+                  {date.getDate()}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        <div>
+          {Array.from({ length: 15 }, (_, i) => {
+            let time = 2 + i * 30;
+            <button>{time}</button>;
+          })}
         </div>
       </div>
     </div>
